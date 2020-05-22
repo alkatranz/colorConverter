@@ -104,8 +104,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
 		return Math.round(hue);
 	}
 	//Zmiana stylu tekstu podglądowego
-	function changeTextStyle(value){
-		if (value <= 60) {
+	function changeTextStyle(hue, saturation, value){
+		if (value <= 60 || (hue >210 && hue<280) && saturation>30) {
 			viewText.classList.remove("blackText");
 			viewText.classList.add("whiteText");
 		}
@@ -177,7 +177,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 		
 		const saturation = (cMax != 0) ? (delta/cMax * 100) : 0;
 		const value = (cMax * 100);
-		changeTextStyle(value);
+		changeTextStyle(hue, saturation, value);
 		const hsv = [hue, saturation, value];
 		return hsv;
 	}
@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 		const hue = hsv[0];
 		const saturation = hsv[1] / 100;
 		const value = hsv[2] / 100 ;
-		changeTextStyle(hsv[2]);
+		changeTextStyle(hsv[0], hsv[1], hsv[2]);
 
 		const c = value * saturation;
 		const x = c * (1 - Math.abs(((hue / 60) % 2) - 1));
@@ -294,13 +294,13 @@ document.addEventListener("DOMContentLoaded", ()=>{
 	//kolorowy gradient na pasku bocznym
 	colorBarCanvasContext.rect(0,0,colorBarCanvas.width, colorBarCanvas.height)
 	let gradient = colorBarCanvasContext.createLinearGradient(0, 0, 0, colorBarCanvas.height);
-	gradient.addColorStop(0, 'rgba(255, 0, 0, 1)');
-	gradient.addColorStop(0.17, 'rgba(255, 255, 0, 1)');
-	gradient.addColorStop(0.34, 'rgba(0, 255, 0, 1)');
-	gradient.addColorStop(0.51, 'rgba(0, 255, 255, 1)');
-	gradient.addColorStop(0.68, 'rgba(0, 0, 255, 1)');
-	gradient.addColorStop(0.85, 'rgba(255, 0, 255, 1)');
-	gradient.addColorStop(1, 'rgba(255, 0, 0, 1)');
+	gradient.addColorStop(0, 'rgb(255, 0, 0)');
+	gradient.addColorStop(0.17, 'rgb(255, 255, 0)');
+	gradient.addColorStop(0.34, 'rgb(0, 255, 0)');
+	gradient.addColorStop(0.51, 'rgb(0, 255, 255)');
+	gradient.addColorStop(0.68, 'rgb(0, 0, 255)');
+	gradient.addColorStop(0.85, 'rgb(255, 0, 255)');
+	gradient.addColorStop(1, 'rgba(255, 0, 0)');
 	colorBarCanvasContext.fillStyle = gradient;
 	colorBarCanvasContext.fill();
 	drawCanvas(0);
