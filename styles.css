@@ -1,0 +1,63 @@
+.whiteText{
+    color:white;
+    text-shadow: black 0 0 15px;
+}
+.blackText{
+    color:black;
+    text-shadow: white 0 0 15px;
+}
+canvas{
+    cursor: crosshair;
+    border: 1px solid black;
+}
+#colorView{
+    width: 200px;
+    height: 200px;
+    position: relative;
+    padding:50px;
+    border:1px solid black;
+}
+.colorBox{
+    margin-top:10px;
+    display: flex;
+    position: relative;
+    box-sizing: border-box;
+    flex-direction: row;
+    padding:5px;
+    width:fit-content;
+    border:1px dashed black;
+}
+.colorBox>div{
+    margin:10px;
+}
+#colorCodes{
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+    box-sizing: border-box;
+    flex-direction: row;
+}
+#colorCodes>div{
+    width: 100%;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#colorCodes input{
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+}
+label{
+    align-self: flex-start;
+}
+#colorCodes>div>div{
+    width: 100%;
+    height: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+#hex_all{
+    text-transform: uppercase;
+}

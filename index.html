@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Kalkulator kolorów</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="script.js"></script>
+    </head>
+    <body>
+        <h1>Konwerter kolorów</h1>
+        <h2>by Daniel Zapotoczny</h2>
+        <div class="colorBox">
+            <div id="colorView">
+                <p class="blackText">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Cras orci nisl, interdum sed neque sit amet, hendrerit pellentesque arcu. 
+                    Curabitur dictum tortor ut ligula eleifend, eget suscipit sapien molestie.
+                </p>
+            </div>
+            <div>
+                <canvas id="colorPalette" width="300" height="300"></canvas>
+            </div>
+            <div>
+                <canvas width="25" height="300" id="colorBar"></canvas>
+            </div>
+        </div>
+        <div id ="colorCodes">
+            <div id="rgb">
+                <h2>RGB</h2>
+                <label for="rgb_r">Red: </label><div><input type="number" name="rgb_r" id="rgb_r" value="255" min="0" max=255></div>
+                <label for="rgb_g">Green: </label><div><input type="number" name="rgb_g" id="rgb_g" value="255" min="0" max=255></div>
+                <label for="rgb_b">Blue: </label><div><input type="number" name="rgb_b" id="rgb_b" value="255" min="0" max=255></div>
+            </div>
+            <div id="cmyk">
+                <h2>CMYK</h2>
+                <label for="cmyk_c">Cyan: </label><div><input type="number" name="cmyk_c" id="cmyk_c" value="0" min="0" max="100">%</div>
+                <label for="cmyk_m">Magenta: </label><div><input type="number" name="cmyk_m" id="cmyk_m" value="0" min="0" max="100">%</div>
+                <label for="cmyk_y">Yellow: </label><div><input type="number" name="cmyk_y" id="cmyk_y" value="0" min="0" max="100">%</div>
+                <label for="cmyk_k">Black: </label><div><input type="number" name="cmyk_k" id="cmyk_k" value="0" min="0" max="100">%</div>
+            </div>
+            <div id="hsv">
+                <h2>HSV</h2>
+                <label for="hsv_h">Hue: </label><div><input type="number" name="hsv_h" id="hsv_h" value="0" min="0" max="360">&deg;&nbsp;&nbsp;</div>
+                <label for="hsv_s">Saturation: </label><div><input type="number" name="hsv_s" id="hsv_s" value="0" min="0" max="100">%</div>
+                <label for="hsv_v">Value: </label><div><input type="number" name="hsv_v" id="hsv_v" value="100" min="0">%</div>
+            </div>
+            <div id="hex">
+                <h2>HEX</h2>
+                <label for='hex_r'>Red: </label><div><input type="text" name="hex_r" id="hex_r" value="00" maxlength="2"></div>
+                <label for='hex_g'>Green: </label><div><input type="text" name="hex_g" id="hex_g" value="00" maxlength="2"></div>
+                <label for='hex_b'>Blue: </label><div><input type="text" name="hex_b" id="hex_b" value="00" maxlength="2"></div>
+                <label for='hex_all'>Razem: </label><div>#<input type="text" name="hex_all" id="hex_all" value="000000" disabled></div>
+            </div>
+        </div>
+    </body>
+</html>
